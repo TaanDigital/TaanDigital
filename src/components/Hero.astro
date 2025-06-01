@@ -1,63 +1,105 @@
 ---
-interface Props {
-	title: string;
-	subtitle: string;
-	ctaText: string;
+// src/components/Hero.astro
+import '../styles/hero.css';
+
+interface HeroContent {
+  title: string;
+  description: string;
+  primaryButton: {
+    text: string;
+    url: string;
+  };
+  secondaryButton: {
+    text: string;
+    url: string;
+  };
 }
 
-const { title, subtitle, ctaText } = Astro.props;
+const content: HeroContent = {
+  title: "Transformamos Ideas en Éxito Digital",
+  description: "Estar Aquí® es una agencia de marketing digital en México. Desde CDMX trabajamos con marcas y empresas en todo el mundo, creando estrategias digitales que generan resultados reales.",
+  primaryButton: {
+    text: "Comienza Ahora",
+    url: "#servicios"
+  },
+  secondaryButton: {
+    text: "Conoce Más",
+    url: "#nosotros"
+  }
+};
+
+// Verificar si existe la imagen de fondo
+let hasBackgroundImage = false;
+try {
+  const imageUrl = new URL('/images/hero-bg.jpg', import.meta.url);
+  hasBackgroundImage = true;
+} catch (e) {
+  console.warn('Hero background image not found');
+}
 ---
 
-<section class="hero">
-	<div class="hero-content">
-		<h1>{title}</h1>
-		<p>{subtitle}</p>
-		<button class="cta-button">{ctaText}</button>
-	</div>
+<section class={`hero ${hasBackgroundImage ? 'has-bg' : ''}`} id="inicio">
+  <div class="hero__content">
+    <h1 class="hero__title">
+      {content.title}
+    </h1>
+    <p class="hero__description">
+      {content.description}
+    </p>
+    <div class="hero__buttons">
+      <a 
+        href={content.primaryButton.url} 
+        class="hero__button hero__button--primary"
+      >
+        <span>{content.primaryButton.text}</span>
+      </a>
+      <a 
+        href={content.secondaryButton.url} 
+        class="hero__button hero__button--secondary"
+      >
+        {content.secondaryButton.text}
+      </a>
+    </div>
+  </div>
+  
+  <a href="#servicios" class="hero__scroll-indicator">
+    <span class="material-icons">expand_more</span>
+  </a>
 </section>
 
+<script>
+  // Smooth scroll para los enlaces del hero
+  document.querySelectorAll('a[href^="#"]').forEach((anchor: Element) => {
+    anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event) {
+      e.preventDefault();
+      const href = this.getAttribute('href');
+      if (href) {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  });
+
+  // Efecto parallax en el fondo
+  const hero = document.querySelector('.hero');
+  if (hero instanceof HTMLElement) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const rate = scrolled * 0.5;
+      hero.style.backgroundPositionY = `${rate}px`;
+    });
+  }
+</script>
+
 <style>
-	.hero {
-		background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
-		min-height: 80vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 2rem;
-		text-align: center;
+	.bg-hero {
+	  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+				  url("/images/hero-bg.jpg") no-repeat center center;
+	  background-size: cover;
 	}
-
-	.hero-content {
-		max-width: 800px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		font-size: 3.5rem;
-		color: #1a202c;
-		margin-bottom: 1rem;
-		line-height: 1.2;
-	}
-
-	p {
-		font-size: 1.5rem;
-		color: #4a5568;
-		margin-bottom: 2rem;
-	}
-
-	.cta-button {
-		background-color: #4299e1;
-		color: white;
-		padding: 1rem 2rem;
-		border: none;
-		border-radius: 0.5rem;
-		font-size: 1.125rem;
-		font-weight: 600;
-		cursor: pointer;
-		transition: background-color 0.3s ease;
-	}
-
-	.cta-button:hover {
-		background-color: #3182ce;
-	}
-</style> 
+</style>

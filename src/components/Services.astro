@@ -1,82 +1,77 @@
 ---
-const services = [
-	{
-		title: "Branding",
-		description: "Creamos tu identidad visual y logotipo que refleje la esencia de tu negocio",
-		icon: "🎨"
-	},
-	{
-		title: "Marketing Digital",
-		description: "Estrategias efectivas para llegar a tu audiencia ideal",
-		icon: "📱"
-	},
-	{
-		title: "Gestión de Contenido",
-		description: "Mantenemos tus redes sociales activas y relevantes",
-		icon: "📝"
-	}
+// src/components/Services.astro
+import '../styles/services.css';
+
+interface Service {
+  icon: string;
+  title: string;
+  description: string;
+  link: string;
+}
+
+const services: Service[] = [
+  {
+    icon: "analytics",
+    title: "Marketing Digital",
+    description: "Estrategias personalizadas para aumentar tu presencia online y alcanzar a tu audiencia ideal.",
+    link: "/servicios/marketing-digital"
+  },
+  {
+    icon: "code",
+    title: "Desarrollo Web",
+    description: "Sitios web modernos, rápidos y optimizados para buscadores que convierten visitantes en clientes.",
+    link: "/servicios/desarrollo-web"
+  },
+  {
+    icon: "auto_awesome",
+    title: "Branding Digital",
+    description: "Creación y gestión de marca que conecta emocionalmente con tu audiencia en el mundo digital.",
+    link: "/servicios/branding"
+  },
+  {
+    icon: "campaign",
+    title: "Social Media",
+    description: "Gestión profesional de redes sociales para construir una comunidad comprometida con tu marca.",
+    link: "/servicios/social-media"
+  },
+  {
+    icon: "trending_up",
+    title: "SEO",
+    description: "Optimización para buscadores que mejora tu visibilidad y atrae tráfico orgánico cualificado.",
+    link: "/servicios/seo"
+  },
+  {
+    icon: "psychology",
+    title: "Marketing de Contenidos",
+    description: "Contenido estratégico que educa, entretiene y convierte a tu audiencia en clientes leales.",
+    link: "/servicios/contenidos"
+  }
 ];
 ---
 
-<section class="services">
-	<h2>Nuestros Servicios</h2>
-	<div class="services-grid">
-		{services.map(service => (
-			<div class="service-card">
-				<div class="service-icon">{service.icon}</div>
-				<h3>{service.title}</h3>
-				<p>{service.description}</p>
-			</div>
-		))}
-	</div>
+<section class="services" id="servicios">
+  <div class="services__container">
+    <header class="services__header">
+      <h2 class="services__title">Nuestros Servicios</h2>
+      <p class="services__subtitle">
+        Soluciones digitales integrales diseñadas para impulsar tu crecimiento y maximizar tu impacto online.
+      </p>
+    </header>
+
+    <div class="services__grid">
+      {services.map(service => (
+        <article class="service-card">
+          <span class="material-icons service-card__icon">
+            {service.icon}
+          </span>
+          <h3 class="service-card__title">{service.title}</h3>
+          <p class="service-card__description">{service.description}</p>
+          <a href={service.link} class="service-card__link">
+            Conoce más
+            <span class="material-icons service-card__link-icon">arrow_forward</span>
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
 </section>
-
-<style>
-	.services {
-		padding: 4rem 2rem;
-		background-color: white;
-	}
-
-	h2 {
-		text-align: center;
-		font-size: 2.5rem;
-		color: #1a202c;
-		margin-bottom: 3rem;
-	}
-
-	.services-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
-		max-width: 1200px;
-		margin: 0 auto;
-	}
-
-	.service-card {
-		padding: 2rem;
-		text-align: center;
-		background-color: #f7fafc;
-		border-radius: 1rem;
-		transition: transform 0.3s ease;
-	}
-
-	.service-card:hover {
-		transform: translateY(-5px);
-	}
-
-	.service-icon {
-		font-size: 3rem;
-		margin-bottom: 1rem;
-	}
-
-	h3 {
-		color: #2d3748;
-		font-size: 1.5rem;
-		margin-bottom: 1rem;
-	}
-
-	p {
-		color: #4a5568;
-		line-height: 1.6;
-	}
-</style> 

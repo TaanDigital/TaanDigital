@@ -1,121 +1,58 @@
-/* Global Styles for TÁAN DIGITAL */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+/* src/styles/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --blue-light: #A2D4F5;
-  --mint: #B3E6C1;
-  --white: #ffffff;
-  --gray-light: #D9D9D9;
-  --coral: #FF6B6B;
-  --font-main: 'Nunito', sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --color-sky-blue-light: #A2D4F5;
+  --color-mint-green-soft: #B3E6C1;
+  --color-pure-white: #FFFFFF;
+  --color-gray-soft: #D9D9D9;
+  --color-coral-vibrant: #FF6B6B;
+  
+  /* Nuevas variables para texto */
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-text-light: #999999;
+  
+  /* Variables de fuentes */
+  --font-primary: 'Roboto', sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 }
 
 body {
-  font-family: var(--font-main);
-  background-color: var(--white);
-  color: #333;
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-pure-white);
+  color: var(--color-text-primary);
   line-height: 1.6;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Hero */
-.hero {
-  background-color: var(--blue-light);
-  color: var(--white);
-}
-
-.hero h1 {
-  font-size: 2.5rem;
+.logo-font {
+  font-family: 'Quicksand', sans-serif;
   font-weight: 700;
 }
 
-.hero p {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
+.nunito-font {
+  font-family: 'Nunito', sans-serif;
 }
 
-.hero a {
-  background-color: var(--white);
-  color: var(--blue-light);
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+.poppins-font {
+  font-family: 'Poppins', sans-serif;
 }
 
-.hero a:hover {
-  background-color: var(--mint);
+.quicksand-font {
+  font-family: 'Quicksand', sans-serif;
 }
 
-/* Services */
-.services h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.services h3 {
-  font-size: 1.25rem;
-  margin-top: 1rem;
-}
-
-/* Testimonials */
-.testimonios {
-  background-color: #f9fafb;
-}
-
-.testimonios p {
-  color: #555;
-  font-style: italic;
-  margin-bottom: 1rem;
-}
-
-/* CTA Final */
-.cta-final {
-  background-color: var(--coral);
-  color: var(--white);
-}
-
-.cta-final h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.cta-final a {
-  background-color: var(--white);
-  color: var(--coral);
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.cta-final a:hover {
-  background-color: #ffe6e6;
-}
-
-/* Responsive tweaks */
-@media (min-width: 768px) {
-  .hero h1 {
-    font-size: 3.5rem;
-  }
-
-  .hero p {
-    font-size: 1.5rem;
-  }
-
-  .services h2,
-  .cta-final h2 {
-    font-size: 2.5rem;
-  }
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }

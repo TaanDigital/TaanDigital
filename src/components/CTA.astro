@@ -1,0 +1,106 @@
+---
+// src/components/CTA.astro
+
+
+import '../styles/cta.css';
+
+interface Feature {
+  icon: string;
+  title: string;
+  text: string;
+}
+
+const features: Feature[] = [
+  {
+    icon: "rocket_launch",
+    title: "Lanzamiento Rápido",
+    text: "Implementación ágil y resultados inmediatos"
+  },
+  {
+    icon: "psychology_alt",
+    title: "Estrategia Personalizada",
+    text: "Soluciones adaptadas a tus objetivos"
+  },
+  {
+    icon: "monitoring",
+    title: "Análisis en Tiempo Real",
+    text: "Métricas y ajustes continuos"
+  }
+];
+---
+<section class="cta" id="contacto">
+  <div class="cta__background">
+    <div class="cta__circle"></div>
+    <div class="cta__circle"></div>
+    <div class="cta__circle"></div>
+  </div>
+
+  <div class="cta__container">
+    <h2 class="cta__title">
+      ¿Listo para Transformar tu Presencia Digital?
+    </h2>
+    <p class="cta__description">
+      Únete a las empresas que ya están destacando en el mundo digital. 
+      Nuestro equipo está listo para impulsar tu proyecto al siguiente nivel.
+    </p>
+
+    <div class="cta__buttons">
+      <a href="/contacto" class="cta__button cta__button--primary">
+        <span>Comienza tu Proyecto</span>
+      </a>
+      <a href="/casos" class="cta__button cta__button--secondary">
+        Ver Casos de Éxito
+      </a>
+    </div>
+
+    <div class="cta__features">
+      {features.map((feature: Feature) => (
+        <div class="cta__feature">
+          <span class="material-icons cta__feature-icon">
+            {feature.icon}
+          </span>
+          <h3 class="cta__feature-title">{feature.title}</h3>
+          <p class="cta__feature-text">{feature.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Efecto parallax para los círculos de fondo
+  document.addEventListener('mousemove', (e: MouseEvent) => {
+    const circles = document.querySelectorAll<HTMLElement>('.cta__circle');
+    const mouseX = e.clientX / window.innerWidth;
+    const mouseY = e.clientY / window.innerHeight;
+
+    circles.forEach((circle: HTMLElement, index: number) => {
+      const speed = (index + 1) * 20;
+      const x = (mouseX - 0.5) * speed;
+      const y = (mouseY - 0.5) * speed;
+      
+      if (circle.style) {
+        circle.style.transform = `translate(${x}px, ${y}px)`;
+      }
+    });
+  });
+
+  // Efecto de revelación al hacer scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.target instanceof HTMLElement) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll<HTMLElement>('.cta__feature').forEach(feature => {
+    if (feature.style) {
+      feature.style.opacity = '0';
+      feature.style.transform = 'translateY(20px)';
+      feature.style.transition = 'all 0.6s ease-out';
+      observer.observe(feature);
+    }
+  });
+</script>

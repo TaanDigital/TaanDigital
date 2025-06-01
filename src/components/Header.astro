@@ -1,0 +1,48 @@
+---
+// src/components/Header.astro
+import '../styles/header.css';
+
+const navItems = [
+  "Marketing Digital", "Consultoría", "Diseño Web", "Social Media", 
+  "Content", "SEO", "SEM", "AI", "eCommerce"
+];
+
+const secondaryLinks = [
+  "Bolsa de trabajo", "Tienda", "Acerca de Estar Aquí", "Blog", "English"
+];
+---
+
+<header class="header">
+  <div class="container header__container">
+    <a href="/" class="header__logo">
+      ESTAR AQUÍ
+    </a>
+    
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li><a href="#" class="header__nav-link">Marketing Digital</a></li>
+        <li><a href="#" class="header__nav-link">Consultoría</a></li>
+        <li><a href="#" class="header__nav-link">Diseño Web</a></li>
+        <li><a href="#" class="header__nav-link">Social Media</a></li>
+        <li><a href="#" class="header__nav-link">Content</a></li>
+        <li><a href="#" class="header__nav-link">SEO</a></li>
+        <li><a href="#" class="header__nav-link">SEM</a></li>
+        <li><a href="#" class="header__nav-link">AI</a></li>
+        <li><a href="#" class="header__nav-link">eCommerce</a></li>
+        <li><a href="#" class="header__nav-button">Contáctanos</a></li>
+      </ul>
+    </nav>
+
+    <button class="header__menu-button">
+      <span class="material-icons">menu</span>
+    </button>
+  </div>
+
+  <div class="header__secondary">
+    <a href="#" class="header__secondary-link">Bolsa de trabajo</a>
+    <a href="#" class="header__secondary-link">Tienda</a>
+    <a href="#" class="header__secondary-link">Acerca de Estar Aquí</a>
+    <a href="#" class="header__secondary-link">Blog</a>
+    <a href="#" class="header__secondary-link">English</a>
+  </div>
+</header>
