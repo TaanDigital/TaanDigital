@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+	{
+		title: "Identidad Visual y Logotipo",
+		description: "Creamos una identidad única que refleje la esencia de tu marca. Incluye diseño de logotipo, paleta de colores, tipografía y guía de estilo.",
+		features: [
+			"Diseño de logotipo profesional",
+			"Manual de marca completo",
+			"Papelería corporativa",
+			"Elementos visuales complementarios"
+		]
+	},
+	{
+		title: "Marketing y Campañas",
+		description: "Desarrollamos estrategias efectivas para aumentar tu presencia en el mercado y alcanzar a tu audiencia ideal.",
+		features: [
+			"Estrategia de marketing digital",
+			"Campañas en redes sociales",
+			"Email marketing",
+			"Publicidad digital"
+		]
+	},
+	{
+		title: "Gestión de Redes y Contenido",
+		description: "Mantenemos tus redes sociales activas y relevantes con contenido de calidad que conecta con tu audiencia.",
+		features: [
+			"Gestión de redes sociales",
+			"Creación de contenido",
+			"Calendario editorial",
+			"Análisis de métricas"
+		]
+	}
+];
+---
+
+<Layout title="Servicios - TÁAN">
+	<main class="services-page">
+		<header class="page-header">
+			<h1>Nuestros Servicios</h1>
+			<p>Soluciones integrales para tu presencia digital</p>
+		</header>
+
+		<section class="services-list">
+			{services.map(service => (
+				<article class="service-item">
+					<h2>{service.title}</h2>
+					<p class="service-description">{service.description}</p>
+					<ul class="features-list">
+						{service.features.map(feature => (
+							<li>{feature}</li>
+						))}
+					</ul>
+				</article>
+			))}
+		</section>
+
+		<section class="projects-gallery">
+			<h2>Proyectos Realizados</h2>
+			<div class="gallery-grid">
+				<!-- Aquí se agregarán las imágenes de los proyectos -->
+				<div class="project-placeholder">Proyecto 1</div>
+				<div class="project-placeholder">Proyecto 2</div>
+				<div class="project-placeholder">Proyecto 3</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.services-page {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	.page-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.page-header h1 {
+		font-size: 3rem;
+		color: #1a202c;
+		margin-bottom: 1rem;
+	}
+
+	.page-header p {
+		font-size: 1.5rem;
+		color: #4a5568;
+	}
+
+	.services-list {
+		display: grid;
+		gap: 3rem;
+		margin-bottom: 4rem;
+	}
+
+	.service-item {
+		background: #f7fafc;
+		padding: 2rem;
+		border-radius: 1rem;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	.service-item h2 {
+		color: #2d3748;
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
+	}
+
+	.service-description {
+		color: #4a5568;
+		margin-bottom: 1.5rem;
+		line-height: 1.6;
+	}
+
+	.features-list {
+		list-style: none;
+		padding: 0;
+	}
+
+	.features-list li {
+		padding: 0.5rem 0;
+		color: #4a5568;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.features-list li::before {
+		content: "✓";
+		color: #4299e1;
+		font-weight: bold;
+	}
+
+	.projects-gallery {
+		margin-top: 4rem;
+	}
+
+	.projects-gallery h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		color: #1a202c;
+		margin-bottom: 2rem;
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+
+	.project-placeholder {
+		background: #e2e8f0;
+		height: 200px;
+		border-radius: 0.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #4a5568;
+		font-weight: bold;
+	}
+</style> 

@@ -1,0 +1,96 @@
+---
+const testimonials = [
+	{
+		quote: "TÁAN transformó completamente la presencia digital de mi negocio",
+		author: "María González",
+		company: "Café Artesanal"
+	},
+	{
+		quote: "El proceso de branding fue increíblemente profesional y efectivo",
+		author: "Carlos Ruiz",
+		company: "Estudio de Diseño CR"
+	},
+	{
+		quote: "Resultados excepcionales en nuestras campañas de marketing",
+		author: "Ana Martínez",
+		company: "Boutique AM"
+	}
+];
+---
+
+<section class="testimonials">
+	<h2>Lo que dicen nuestros clientes</h2>
+	<div class="testimonials-grid">
+		{testimonials.map(testimonial => (
+			<div class="testimonial-card">
+				<div class="quote-mark">"</div>
+				<p class="quote">{testimonial.quote}</p>
+				<div class="author">
+					<strong>{testimonial.author}</strong>
+					<span>{testimonial.company}</span>
+				</div>
+			</div>
+		))}
+	</div>
+</section>
+
+<style>
+	.testimonials {
+		padding: 4rem 2rem;
+		background-color: #f7fafc;
+	}
+
+	h2 {
+		text-align: center;
+		font-size: 2.5rem;
+		color: #1a202c;
+		margin-bottom: 3rem;
+	}
+
+	.testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.testimonial-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 1rem;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		position: relative;
+	}
+
+	.quote-mark {
+		font-size: 4rem;
+		color: #4299e1;
+		position: absolute;
+		top: -1rem;
+		left: 1rem;
+		opacity: 0.2;
+	}
+
+	.quote {
+		font-size: 1.125rem;
+		color: #2d3748;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	.author {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.author strong {
+		color: #1a202c;
+	}
+
+	.author span {
+		color: #4a5568;
+		font-size: 0.875rem;
+	}
+</style> 

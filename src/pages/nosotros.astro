@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const values = [
+	{
+		title: "Innovación",
+		description: "Buscamos constantemente nuevas formas de ayudar a nuestros clientes a destacar en el mundo digital."
+	},
+	{
+		title: "Calidad",
+		description: "Nos comprometemos a entregar trabajo de la más alta calidad en cada proyecto."
+	},
+	{
+		title: "Colaboración",
+		description: "Trabajamos en estrecha colaboración con nuestros clientes para alcanzar sus objetivos."
+	}
+];
+---
+
+<Layout title="Nosotros - TÁAN">
+	<main class="about-page">
+		<header class="page-header">
+			<h1>Sobre TÁAN</h1>
+			<p>Transformando negocios en el mundo digital</p>
+		</header>
+
+		<section class="story-section">
+			<h2>Nuestra Historia</h2>
+			<div class="story-content">
+				<p>
+					TÁAN nació de la visión de crear un puente entre los pequeños negocios y el mundo digital. 
+					Entendemos los desafíos que enfrentan las empresas en su proceso de digitalización, y 
+					estamos aquí para hacer ese camino más fácil y efectivo.
+				</p>
+				<p>
+					Desde nuestro inicio, nos hemos dedicado a ayudar a empresas de todos los tamaños a 
+					establecer una presencia digital sólida y profesional, siempre manteniendo la esencia 
+					única de cada negocio.
+				</p>
+			</div>
+		</section>
+
+		<section class="mission-vision">
+			<div class="mission">
+				<h2>Misión</h2>
+				<p>
+					Empoderar a pequeños y medianos negocios con soluciones digitales efectivas y 
+					accesibles que impulsen su crecimiento y éxito en el mercado digital.
+				</p>
+			</div>
+			<div class="vision">
+				<h2>Visión</h2>
+				<p>
+					Ser reconocidos como el aliado estratégico preferido para la transformación 
+					digital de negocios, destacando por nuestra innovación, calidad y resultados.
+				</p>
+			</div>
+		</section>
+
+		<section class="values-section">
+			<h2>Nuestros Valores</h2>
+			<div class="values-grid">
+				{values.map(value => (
+					<div class="value-card">
+						<h3>{value.title}</h3>
+						<p>{value.description}</p>
+					</div>
+				))}
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.about-page {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	.page-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+
+	.page-header h1 {
+		font-size: 3rem;
+		color: #1a202c;
+		margin-bottom: 1rem;
+	}
+
+	.page-header p {
+		font-size: 1.5rem;
+		color: #4a5568;
+	}
+
+	.story-section {
+		margin-bottom: 4rem;
+	}
+
+	.story-section h2 {
+		color: #2d3748;
+		font-size: 2rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.story-content p {
+		color: #4a5568;
+		line-height: 1.8;
+		margin-bottom: 1.5rem;
+		font-size: 1.125rem;
+	}
+
+	.mission-vision {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+
+	.mission, .vision {
+		background: #f7fafc;
+		padding: 2rem;
+		border-radius: 1rem;
+	}
+
+	.mission h2, .vision h2 {
+		color: #2d3748;
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
+	}
+
+	.mission p, .vision p {
+		color: #4a5568;
+		line-height: 1.6;
+	}
+
+	.values-section {
+		margin-bottom: 4rem;
+	}
+
+	.values-section h2 {
+		text-align: center;
+		font-size: 2rem;
+		color: #2d3748;
+		margin-bottom: 2rem;
+	}
+
+	.values-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+	}
+
+	.value-card {
+		background: white;
+		padding: 2rem;
+		border-radius: 1rem;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		text-align: center;
+	}
+
+	.value-card h3 {
+		color: #2d3748;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.value-card p {
+		color: #4a5568;
+		line-height: 1.6;
+	}
+</style> 

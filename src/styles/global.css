@@ -1,0 +1,121 @@
+/* Global Styles for TÁAN DIGITAL */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+  --blue-light: #A2D4F5;
+  --mint: #B3E6C1;
+  --white: #ffffff;
+  --gray-light: #D9D9D9;
+  --coral: #FF6B6B;
+  --font-main: 'Nunito', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--white);
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Hero */
+.hero {
+  background-color: var(--blue-light);
+  color: var(--white);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero a {
+  background-color: var(--white);
+  color: var(--blue-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.hero a:hover {
+  background-color: var(--mint);
+}
+
+/* Services */
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.services h3 {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+/* Testimonials */
+.testimonios {
+  background-color: #f9fafb;
+}
+
+.testimonios p {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+/* CTA Final */
+.cta-final {
+  background-color: var(--coral);
+  color: var(--white);
+}
+
+.cta-final h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-final a {
+  background-color: var(--white);
+  color: var(--coral);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-final a:hover {
+  background-color: #ffe6e6;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+  }
+
+  .services h2,
+  .cta-final h2 {
+    font-size: 2.5rem;
+  }
+}
