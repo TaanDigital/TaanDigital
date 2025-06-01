@@ -1,51 +1,27 @@
-# Tán Digital - Agencia de Marketing Digital 🌍✨
+# Taan
 
-## Sobre nosotros
+Este es un nuevo proyecto web iniciado desde cero.
 
-"Tán" significa "Luz" en maya, y representa el inicio de una nueva era de crecimiento y éxito en tu negocio. En
-**Tán Digital**, nos enfocamos en proporcionar soluciones innovadoras y efectivas para tu marca digital.
+## Estructura del Proyecto
 
-### Nuestros valores fundamentales:
-- 🌱 Creación de marca única y memorable.
-- 💡 Estrategias de marketing que generan resultados.
-- ✨ Trabajo en equipo con un enfoque artístico y profesional.
+El proyecto seguirá una estructura organizada que se definirá según las necesidades del desarrollo.
 
-## Nuestros servicios
-Los siguientes son algunos de los proyectos que hemos desarrollado para marcas como la tuya:
+## Requisitos
 
-### 1. **Marketing Digital**
-   - Gestión de campañas en redes sociales (Facebook, Instagram, Twitter).
-   - Uso de herramientas como Google Analytics, Hootsuite y SimilarWeb.
-   - Creación de contenido personalizado y efectivo.
+- Por definir
 
-### 2. **Gestión de Contenido**
-   - Desarrollo y edición de contenido para websites, blogs y profiles de redes sociales.
-   - Optimización SEO para mejorar la posición en buscadores.
+## Instalación
 
-### 3. **Brand Identity**
-   - Creación de logos y marcas únicas.
-   - Identidad visual cohesiva para tu negocio.
+Por definir
 
-### 4. **Social Media Management**
-   - Planeamiento y ejecución de campañas publicitarias en redes sociales.
-   - Monitoreo diario de las percepciones de la marca.
+## Uso
 
-## ¿Cómo podemos ayudarte?
-Si estás buscando:
-- Un incremento en tus ventas.
-- Mayor visibilidad en internet.
-- Una mejor relación con tu audiencia.
+Por definir
 
-¡En Tán Digital, tenemos la solución! 🚀
+## Contribución
 
----
+Por definir
 
-### Contáctanos
-Si quieres saber más o comenzar un proyecto, no dudes en visitarnos en:
-- Sitio web: [tu-dominio.com](http://www.tu-dominio.com)
-- Correo electrónico: **contacto@tandigital.agency**
-- Instagram: [@tandigital_agency](https://www.instagram.com/tandigital_agency)
+## Licencia
 
----
-
-¡Bienvenido a Tán Digital, tu aliado en el éxito digital! 🌟
+Por definir 
