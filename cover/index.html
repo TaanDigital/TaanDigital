@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tán Digital - Agencia de Marketing Digital</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilos combinados */
+        .hero-section {
+            background-color: #f8f9fa;
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .award-heading {
+            font-size: 1.8em;
+            color: #666;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .agency-heading {
+            font-size: 3.5em;
+            color: #222;
+            margin-bottom: 40px;
+        }
+
+        .agency-heading span {
+            color: #e74c3c;
+        }
+
+        .cta-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        .feature-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        nav {
+            padding: 20px 50px;
+            position: fixed;
+            width: 100%;
+            background: white;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            margin: 0 15px;
+        }
+
+        .services-text {
+            color: #777;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="d-flex justify-content-end">
+        <a href="#about">Sobre Nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#login">Ingresar</a>
+    </nav>
+
+    <!-- Sección Principal -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="award-heading">GANADORES DEL PREMIO DIGITAL MARKETING AWARD</div>
+            <h1 class="agency-heading">Tán Digital <span>Marketing Agency</span></h1>
+            <p class="lead">🌱 Creación de marca única y memorable. 💡 Estrategias que generan resultados. ✨ Enfoque artístico y profesional.</p>
+            <button class="cta-button">Descubre el éxito digital</button>
+        </div>
+    </header>
+
+    <!-- Servicios -->
+    <section class="services-section">
+        <div class="container text-center">
+            <h2 class="mb-5">Nuestros Servicios</h2>
+            <div class="row g-4">
+                <!-- Servicio 1 -->
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <h3>Marketing Digital</h3>
+                        <p class="services-text">Gestión de campañas en redes sociales y estrategias efectivas.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <h3>Brand Identity</h3>
+                        <p class="services-text">Creación de identidad visual cohesiva y memorable.</p>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <h3>Social Media</h3>
+                        <p class="services-text">Gestión profesional de redes sociales y contenido optimizado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="brand-section">
+        <div class="container text-center">
+            <h2>¿Por qué elegirnos?</h2>
+            <p class="services-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <button class="cta-button">Leer sobre nuestros servicios</button>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Contáctanos</h2>
+            <form class="mx-auto" style="max-width: 600px;">
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Tu nombre">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" placeholder="Tu correo">
+                    </div>
+                </div>
+                <textarea class="form-control mb-3" rows="4" placeholder="Mensaje"></textarea>
+                <button type="submit" class="btn btn-success">Enviar mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-5">
+        <div class="container text-center">
+            <h3>Tán Digital</h3>
+            <p>🚀 Tu aliado en el éxito digital</p>
+            <div class="social-links">
+                <a href="#" class="text-decoration-none mx-3"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#" class="text-decoration-none mx-3"><i class="far fa-envelope fa-2x"></i></a>
+                <a href="#" class="text-decoration-none mx-3"><i class="fas fa-globe fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Botones CTA
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                window.location.href = '#contacto';
+            });
+        });
+    </script>
+</body>
+</html>
