@@ -1,0 +1,113 @@
+---
+// src/components/TaanDigitalLogo.astro
+// No hay lógica de JavaScript en el frontmatter para este componente,
+// pero lo mantenemos para la estructura de Astro.
+---
+
+<div class="logo-container">
+  <div class="logo-wordmark">TÁ<span class="n-path">A</span>N<span> DIGITAL</span></div>
+</div>
+
+<style>
+  /* Importa la fuente Montserrat directamente en el componente */
+  /* Esto es válido, pero si usas la fuente en varios lugares,
+     es mejor importarla una vez en un layout global o en tu CSS base. */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+  .logo-container {
+      font-size: 4em; /* Tamaño base del logo, puedes ajustarlo */
+      font-weight: 700; /* Negrita para el logo */
+      color: #A2D4F5; /* Azul claro para el texto principal */
+      text-align: center;
+      line-height: 0.9; /* Ajusta el espacio entre líneas si hay saltos */
+      position: relative; /* Para posicionar elementos internos */
+      letter-spacing: -0.03em; /* Ajuste sutil del espaciado entre letras */
+      font-family: 'Montserrat', sans-serif; /* Asegúrate de que la fuente se aplica */
+  }
+
+  .logo-wordmark {
+      display: inline-block; /* Para aplicar transformaciones si es necesario */
+      position: relative;
+      z-index: 1; /* Asegura que el texto esté sobre cualquier pseudo-elemento */
+  }
+
+  .logo-wordmark span {
+      color: #B3E6C1; /* Verde menta para "DIGITAL" */
+      font-weight: 600;
+      margin-left: 0.1em; /* Espacio entre "TÁAN" y "DIGITAL" */
+      font-size: 0.8em; /* "DIGITAL" ligeramente más pequeño */
+      vertical-align: middle; /* Alinea verticalmente con "TÁAN" */
+  }
+
+  /* --- Efecto para la "Á" (simulando un triángulo/sol) --- */
+  .logo-wordmark::before {
+      content: '';
+      position: absolute;
+      top: -0.1em; /* Ajusta la posición vertical */
+      left: 0.1em; /* Ajusta la posición horizontal sobre la A */
+      width: 0.4em; /* Ancho del "sol" */
+      height: 0.4em; /* Alto del "sol" */
+      background-color: #FF6B6B; /* Color coral para el acento */
+      border-radius: 50%; /* Lo hace redondo para simular un sol */
+      opacity: 0.8; /* Ligeramente transparente */
+      z-index: 0; /* Detrás del texto */
+      filter: blur(0.5px); /* Un pequeño blur para suavizar */
+      transform: rotate(45deg); /* Rotación para un efecto más dinámico */
+      animation: pulse-coral 2s infinite alternate; /* Animación sutil */
+  }
+
+  /* Animación para el acento coral */
+  @keyframes pulse-coral {
+      from { transform: scale(1) rotate(45deg); opacity: 0.8; }
+      to { transform: scale(1.1) rotate(45deg); opacity: 1; }
+  }
+
+  /* --- Efecto sutil para la "A" (cursor) --- */
+  .logo-wordmark::after {
+      content: '';
+      position: absolute;
+      bottom: -0.05em; /* Posiciona debajo de la A */
+      right: 0.3em; /* Ajusta a la derecha de la A */
+      width: 0.1em;
+      height: 0.1em;
+      background-color: #A2D4F5; /* Mismo color que TÁAN */
+      transform: rotate(45deg); /* Simula una punta */
+      z-index: 2; /* Encima del texto para simular una punta */
+      opacity: 0.6;
+  }
+
+  /* --- Efecto para la "N" (camino guía) --- */
+  .n-path {
+      position: relative;
+      display: inline-block; /* Permite aplicar pseudo-elementos a una letra específica */
+  }
+
+  .n-path::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px; /* Grosor del camino */
+      background: linear-gradient(to right, #B3E6C1, #A2D4F5); /* Degradado suave */
+      bottom: -0.1em; /* Posiciona debajo de la N */
+      left: 0;
+      transform: scaleX(0.8); /* Lo hace un poco más corto que la N */
+      transform-origin: center;
+      opacity: 0.7;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+      .logo-container {
+          font-size: 2.5em;
+      }
+  }
+
+  @media (max-width: 480px) {
+      .logo-container {
+          font-size: 1.8em;
+      }
+      .logo-wordmark span {
+          font-size: 0.9em;
+      }
+  }
+</style>

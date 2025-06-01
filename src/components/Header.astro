@@ -1,6 +1,7 @@
 ---
 // src/components/Header.astro
 import '../styles/header.css';
+import Logo from './Logo.astro';
 
 const navItems = [
   "Marketing Digital", "Consultoría", "Diseño Web", "Social Media", 
@@ -14,9 +15,7 @@ const secondaryLinks = [
 
 <header class="header">
   <div class="container header__container">
-    <a href="/" class="header__logo">
-      ESTAR AQUÍ
-    </a>
+    <Logo className="header__logo" />
     
     <nav class="header__nav">
       <ul class="header__nav-list">

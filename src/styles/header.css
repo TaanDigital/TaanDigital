@@ -13,17 +13,9 @@
   padding: 1rem;
 }
 
+/* Removemos los estilos específicos del logo ya que ahora están en el componente Logo */
 .header__logo {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: var(--color-sky-blue-light);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.header__logo:hover {
-  color: var(--color-gray-soft);
+  margin-right: 2rem;
 }
 
 .header__nav {
